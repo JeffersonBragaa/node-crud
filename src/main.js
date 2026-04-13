@@ -4,13 +4,19 @@ const { deletaProduto } = require('./db')
 const { mostraProdutoId } = require('./db')
 const { venderProduto } = require('./db')
 const { atualizaProduto } = require('./db')
+const cors = require('cors')
 
 const express = require('express');
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:4200'
+}));
+
 app.use(express.json());
 
-let produtos = [];
+
 
 
 app.get('/produtos-cadastrados', async (req, res) => {
