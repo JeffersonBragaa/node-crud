@@ -2,11 +2,11 @@ const { Pool } = require('pg');
 
 // conexão com o banco
 const pool = new Pool({
-  host: '127.0.0.1',
-  port: 5433,
-  user: 'postgres',
-  password: 'postgres',
-  database: 'produtos_db'
+  host: "postgres_app",
+  port: 5432,
+  user: "postgres",
+  password: "postgres",
+  database: "produtos_db"
 });
 
 // função para cadastrar produto

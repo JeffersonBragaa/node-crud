@@ -19,7 +19,8 @@ app.use(express.json());
 
 
 
-app.get('/produtos-cadastrados', async (req, res) => {
+app.get('/produtosAll', async (req, res) => {
+    console.log('Requisição recebida para /produtosAll');
     try {
         const produtos = await mostraProdutosAll();
 
@@ -191,6 +192,6 @@ app.put('/atualizar-produto/:id', async (req, res) => {
     }
 
 });
-app.listen(3000, () => {
-  console.log('Servidor rodando em http://localhost:3000');
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Servidor rodando');
 });
